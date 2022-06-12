@@ -1,4 +1,4 @@
-![Banner](https://s-christy.com/status-banner-service/website-landing/banner-slim.svg)
+![Banner](https://s-christy.com/status-banner-service/xkcd-web-scraper/banner-slim.svg)
 
 ## Overview
 
