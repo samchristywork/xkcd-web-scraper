@@ -1,3 +1,5 @@
+![Banner](https://s-christy.com/status-banner-service/website-landing/banner-slim.svg)
+
 ## Overview
 
 XKCD is a web comic created by Randall Munroe mainly featuring stick figures in
@@ -47,3 +49,13 @@ the contents of the `index.html` file:
 bash
 curl
 ```
+
+## Credits
+
+XKCD was created by Randall Munroe.
+
+## License
+
+This work is licensed under the GNU General Public License version 3 (GPLv3).
+
+[<img src="https://s-christy.com/status-banner-service/GPLv3_Logo.svg" width="150" />](https://www.gnu.org/licenses/gpl-3.0.en.html)
