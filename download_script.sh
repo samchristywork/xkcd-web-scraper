@@ -18,12 +18,27 @@ function downloadRange {
 
   # Build index
   rm -rf index.html
+  cat << EOF > index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XKCD</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+EOF
   for i in `seq $1 $2`; do
     echo "Downloading metadata: $i"
     curl -s https://xkcd.com/$i/ | \
       awk "/ctitle/; /<div.id..comic.>/,/<.div>/" | \
       sed "s/..imgs.xkcd.com\/comics/imgs/g" >> index.html
   done
+  cat << EOF >> index.html
+</body>
+</html>
+EOF
 
   # Download images
   mkdir -p imgs
