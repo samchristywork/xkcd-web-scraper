@@ -33,6 +33,7 @@ EOF
     echo "Downloading metadata: $i"
     curl -s https://xkcd.com/$i/ | \
       awk "/ctitle/; /<div.id..comic.>/,/<.div>/" | \
+      sed "s/ctitle../&$i - /g" | \
       sed "s/..imgs.xkcd.com\/comics/imgs/g" >> index.html
   done
   cat << EOF >> index.html
