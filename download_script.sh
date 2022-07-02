@@ -19,7 +19,8 @@ function downloadRange {
   # Build index
   rm -rf index.html
   for i in `seq $1 $2`; do
-    curl https://xkcd.com/$i/ | \
+    echo "Downloading metadata: $i"
+    curl -s https://xkcd.com/$i/ | \
       awk "/ctitle/; /<div.id..comic.>/,/<.div>/" | \
       sed "s/..imgs.xkcd.com\/comics/imgs/g" >> index.html
   done
@@ -28,7 +29,7 @@ function downloadRange {
   mkdir -p imgs
   grep "^<img" index.html | \
     cut -f2 -d'"' | \
-    sed "s/.\+/curl \"https:\/\/imgs.xkcd.com\/comics\/&\" --output \"&\"/g" | \
+    sed "s/.\+/curl -s \"https:\/\/imgs.xkcd.com\/comics\/&\" --output \"&\"; echo Downloading image: \"&\"/g" | \
     sed "s/comics.imgs/comics/g" | \
     cat > imgs/manifest
 
