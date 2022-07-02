@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# Print a usage message
+usage (){
+  echo "Usage: ./$(basename $0) begin step end"
+  exit 1
+}
+
+# User must specify exactly three positional arguments
+[ "$#" -eq "3" ] || usage
+
+# Assign names to positional arguments
+begin=$1
+step=$2
+end=$3
+
 function downloadRange {
 
   # Build index
@@ -21,14 +35,15 @@ function downloadRange {
   . imgs/manifest
 }
 
+rm -rf build/
 mkdir -p build/
 (
   cd build/
-  for i in `seq 1 100 500`; do
+  for i in `seq $begin $step $end`; do
     mkdir -p $i;
     (
       cd $i
-      downloadRange $i $(($i+100))
+      downloadRange $i $(($i+$step))
     )
   done
 )
