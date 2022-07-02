@@ -1,6 +1,8 @@
 ![Banner](https://s-christy.com/status-banner-service/xkcd-web-scraper/banner-slim.svg)
 
-![Sample](https://imgs.xkcd.com/comics/sandwich.png)
+<p align="center">
+  <img src="https://imgs.xkcd.com/comics/sandwich.png"/>
+</p>
 
 ## Overview
 
