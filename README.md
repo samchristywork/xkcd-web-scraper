@@ -1,5 +1,7 @@
 ![Banner](https://s-christy.com/status-banner-service/xkcd-web-scraper/banner-slim.svg)
 
+![Sample](https://imgs.xkcd.com/comics/sandwich.png)
+
 ## Overview
 
 XKCD is a web comic created by Randall Munroe mainly featuring stick figures in
