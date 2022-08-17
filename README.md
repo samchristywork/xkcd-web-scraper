@@ -1,3 +1,9 @@
+## Disclaimer
+
+This script makes HTTPS requests to [xkcd.com](https://xkcd.com). I have added
+safeguards to limit the number of requests per second, but even so please be
+respectful and don't be wasteful with your downloads.
+
 ![Banner](https://s-christy.com/status-banner-service/xkcd-web-scraper/banner-slim.svg)
 
 <p align="center">
